@@ -112,6 +112,14 @@ function getBoard(boardId = 1) {
   };
 }
 
+function getColumnById(columnId) {
+  return db.prepare('SELECT * FROM columns WHERE id = ?').get(columnId);
+}
+
+function getColumnsByBoardId(boardId = 1) {
+  return db.prepare('SELECT * FROM columns WHERE board_id = ? ORDER BY position ASC').all(boardId);
+}
+
 function getTaskById(taskId) {
   return db.prepare('SELECT * FROM tasks WHERE id = ?').get(taskId);
 }
@@ -195,6 +203,8 @@ module.exports = {
   getTaskCountPerColumn,
   getTasksByPriority,
   getBoard,
+  getColumnById,
+  getColumnsByBoardId,
   getTaskById,
   createTask,
   updateTask,
