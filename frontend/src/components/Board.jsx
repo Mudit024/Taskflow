@@ -216,7 +216,12 @@ export default function Board() {
           </div>
           <h1 className="brand-title">TaskFlow</h1>
           {board && (
-            <span className="board-badge">{board.name}</span>
+            <>
+              <span className="board-badge">{board.name}</span>
+              <span className="board-badge" title="Total active tasks">
+                {board.columns.reduce((acc, c) => acc + c.tasks.length, 0)} tasks
+              </span>
+            </>
           )}
         </div>
 

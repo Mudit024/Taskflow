@@ -1,0 +1,15 @@
+{
+  "name": "taskflow-root",
+  "version": "1.0.0",
+  "description": "TaskFlow full-stack task management application",
+  "scripts": {
+    "backend:dev": "cd backend && npm run dev",
+    "backend:seed": "cd backend && npm run seed",
+    "backend:test": "cd backend && npm test",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build"
+  },
+  "keywords": ["taskflow", "trello-clone", "react", "express", "sqlite"],
+  "author": "Mudit",
+  "license": "ISC"
+}
